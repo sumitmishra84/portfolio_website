@@ -726,7 +726,7 @@ textarea {
 
 .skills.section {
   padding-top: 2rem;
-  margin-top: 0;
+  margin-top: -1rem;
 }
 
 .section-title {
@@ -747,12 +747,13 @@ textarea {
 
 .skills-header,
 .skilla-description {
-  padding-inline: 1.75rem;
+  padding-inline: -10rem;
 }
 
 .skills-name {
   font-size: var(--larger-font-size);
 }
+
 
 .skills-value {
   color: var(--title-color);
@@ -798,7 +799,7 @@ textarea {
 /*======================Work===================*/
 
 .skills.section {
-  margin-bottom: -10rem;
+  margin-bottom: -1rem;
 }
 
 #portfolio {
@@ -1314,6 +1315,14 @@ textarea {
     padding-inline: 20rem 23rem; /* 👈 left right dono padding alag kar do */
   }
 
+
+   .home-data-two {
+    right: 8rem; /* 👈 thoda right me */
+  }
+  .home-data-one {
+    left: 10rem; 
+  }
+
   .home-banner {
     position: relative;
     right: initial;
@@ -1327,10 +1336,13 @@ textarea {
   }
 
   .home-img-wrapper {
+    margin-top: -10rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 200%;
+    margin-left: 100px;
+    
   }
 
   .home-banner,
@@ -1340,44 +1352,71 @@ textarea {
   }
 
   .home-data {
-    transform: scale(0.9); /* Or whatever scale you want */
+    transform: scale(0.0); /* Or whatever scale you want */
     margin: -18rem; /* Remove any extra margins */
-    margin-top: 5rem;
+    margin-top: -10rem;
   }
   .home-btns {
     flex-direction: column;
-    row-gap: 3.75rem;
+    row-gap: 3rem;
   }
 
-  .home-description {
-    font-size: 1rem; /* 👈 font thoda bada kar diya */
-    line-height: 1.8; /* 👈 readability ke liye line height */
-    margin-top: -20rem; /* 👈 agar zyada gap ho raha to adjust karo */
-    margin-bottom: 15rem;
-    font-size: 2rem;
-    padding: 0 2rem;
-    color: #333; /* 👈 optional: thoda dark text */
+   .home-description {
+    position: relative;
+    top: -20rem;
+    justify-content: center;
+    text-align: center;
+    max-width: 400px;
+    margin-inline: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 1rem;
   }
+
+
 
   .home-socials {
-    margin-top: -10rem; /* 👈 jitna upar chahiye utna minus value do */
+    margin-top: -20rem; /* 👈 jitna upar chahiye utna minus value do */
   }
 
-  .home-btns {
-    position: relative;
-    top: 1rem; /* 👈 Ab upar jaayega */
+ .home-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 2.5rem; /* button ke beech gap */
+  margin-bottom: 2rem; /* thoda neeche space */
+}
+
+.home-btns::after {
+  content: "";
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 40px; 
+  background-color: #000;
+  z-index: 1; 
+}
+.section-title {
+  
+    text-align: center;
+    padding-left: 5rem;
   }
 
-  .home-link::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: calc(60% + 0.9rem);
+  .section-title::before {
+    left: auto;
+    right: 0;
     transform: translateY(-50%);
-    width: 1.5rem;
-    height: 2px;
-    background-color: #000;
   }
+
+  .section-title::before {
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
   .services-swiper,
   .testimonial-swiper {
     max-width: 900px;
@@ -1393,8 +1432,13 @@ textarea {
     grid-template-columns: repeat(2, fit-content(434px));
     justify-content: center;
   }
-}
 
+ .resume-container {
+    grid-template-columns: 1fr !important;  /* ek column me kar diya */
+  }
+ .contact-form-group {
+    grid-template-columns: 1fr;
+ }
 
 @media screen and (max-width: 1024px) {
   .nav {
@@ -1405,7 +1449,7 @@ textarea {
     padding-block: 1rem 0rem;
   }
 
-   .home-data-one,
+  .home-data-one,
   .home-data-two {
     top: 25rem; /* 👈 thoda upar laya */
     margin-bottom: -100rem; /* 👈 dono ke beech ka gap kam kiya */
@@ -1475,7 +1519,7 @@ textarea {
   }
 
   .home-data {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
 
   .services-swiper,
@@ -1498,7 +1542,7 @@ textarea {
   }
 
   .work-list {
-    column-gap: 2rem;
+    column-gap: 1rem;
   }
 
   .work-container {
@@ -1507,46 +1551,112 @@ textarea {
 
   .footer-container {
     flex-direction: column;
-    row-gap: 1.25rem;
+    row-gap: 1rem;
+  }
+}
+  
+
+/* ---------------- Testimonials Responsive Styling ---------------- */
+.testimonials-swiper {
+  max-width: 70%;
+  padding-inline: 1rem;
+}
+
+
+.swiper-slide.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.testimonial-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  padding-inline: 1rem;
+}
+
+.testimonial-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author {
+  font-size: 0.85rem;
+  color: var(--text-color-light);
+  display: block;
+}
+
+.swiper-pagination {
+  margin-top: 1rem;
+}
+
+ @media screen and (max-width: 576px) {
+  .container{
+    padding-inline: 1.25rem;
+  }
+
+  .nav-buttons{
+    column-gap: 1.25rem;
+  }
+  .nav-menu{
+    padding-left: 7rem;
+  }
+  .header-deco{
+    left: 56px;
+  }
+
+  .home-data{
+    transform: scale(0.6);
+  }
+
+  .skills-container{
+    row-gap: 3rem;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .nav-menu {
-    padding-left: 6rem;
-  }
 
-  .header-deco {
+
+  @media screen and (max-width: 400px) {
+  .nav-menu {
+    padding-left: 1rem;
+  }
+  .header-deco{
     left: 40px;
   }
 
-  .home-banner,
   .home-img-wrapper {
-    width: 100%;
+    margin-top: -10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200%; 
   }
-
-  .home-data {
+  .home-data{
     transform: scale(0.5);
   }
-
-  .card {
+  .card{
     padding-inline: 2rem;
   }
 
   .skills-header,
-  .skilla-description {
+  .skilla-description{
     padding-inline: 1.25rem;
   }
+
+  
 }
 
 
 
-
-
-
-
-
-
-
-
-}
